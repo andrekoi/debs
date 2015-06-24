@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Objectos, Fábrica de Software LTDA.
+ * Copyright 2015 Objectos, Fábrica de Software LTDA.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,27 +15,25 @@
  */
 package br.com.objectos.jabuticava.debs;
 
-import br.com.objectos.comuns.io.csv.AbstractCsvConverter;
+import br.com.objectos.way.io.Record;
+import br.com.objectos.way.io.RecordKey;
 
-import com.google.common.base.Strings;
+import com.google.common.base.Function;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-class SerieConverter extends AbstractCsvConverter<String> {
+class ToStringVal implements Function<Record, String> {
 
-  static final SerieConverter INSTANCE = new SerieConverter();
+  private final RecordKey<String> key;
 
-  private SerieConverter() {
+  public ToStringVal(RecordKey<String> key) {
+    this.key = key;
   }
 
   @Override
-  protected String convert(String text) {
-    text = Strings.nullToEmpty(text);
-    return br.com.objectos.core.lang.Strings
-        .accentsToAscii(text)
-        .alphanum()
-        .toString();
+  public String apply(Record input) {
+    return input.get(key);
   }
 
 }

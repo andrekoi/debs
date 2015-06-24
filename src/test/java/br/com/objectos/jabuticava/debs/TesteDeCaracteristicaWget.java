@@ -25,7 +25,6 @@ import java.util.List;
 
 import br.com.objectos.way.io.LineKey;
 import br.com.objectos.way.io.Record;
-import br.com.objectos.way.io.ToStringVal;
 
 import org.testng.annotations.Test;
 

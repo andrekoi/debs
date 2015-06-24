@@ -17,10 +17,13 @@ package br.com.objectos.jabuticava.debs;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.zip.GZIPInputStream;
 
-import br.com.objectos.way.io.WayIOFakes;
-
+import com.google.common.base.Throwables;
 import com.google.common.io.Files;
+import com.google.common.io.Resources;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -38,11 +41,31 @@ public class CaracteristicasFalso {
 
   private static String gunzipAndToString(String resourceName) {
     try {
-      File file = WayIOFakes.gunzip(CaracteristicasFalso.class, resourceName);
+      File file = gunzip(CaracteristicasFalso.class, resourceName);
       return Files.toString(file, Caracteristica.CHARSET);
     } catch (IOException e) {
       return "";
     }
+  }
+
+  private static File gunzip(Class<?> contextClass, String resourceName) {
+    try {
+      File file = File.createTempFile("way-io-", ".fak");
+
+      URL url = getUrl(contextClass, resourceName);
+      InputStream input = Resources.asByteSource(url).openStream();
+      GZIPInputStream gzip = new GZIPInputStream(input);
+      org.testng.reporters.Files.copyFile(gzip, file);
+
+      return file;
+    } catch (IOException e) {
+      throw Throwables.propagate(e);
+    }
+  }
+
+  private static URL getUrl(Class<?> contextClass, String fileName) {
+    URL url = Resources.getResource(contextClass, fileName);
+    return url;
   }
 
 }

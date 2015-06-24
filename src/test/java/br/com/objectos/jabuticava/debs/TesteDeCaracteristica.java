@@ -25,11 +25,6 @@ import java.util.List;
 import br.com.objectos.way.io.LineKey;
 import br.com.objectos.way.io.Record;
 import br.com.objectos.way.io.RecordKey;
-import br.com.objectos.way.io.ToEnumStringVal;
-import br.com.objectos.way.io.ToIntegerVal;
-import br.com.objectos.way.io.ToLocalDateVal;
-import br.com.objectos.way.io.ToLongVal;
-import br.com.objectos.way.io.ToStringVal;
 
 import com.google.common.base.Function;
 
