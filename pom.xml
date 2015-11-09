@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -13,7 +14,8 @@
 	<version>0.1.0-SNAPSHOT</version>
 
 	<name>objectos :: debentures.com.br</name>
-	<description>Extrai e trata informações do site debenture.com.br</description>
+	<description>Extrai e trata informações do site debenture.com.br
+	</description>
 	<url>https://github.com/objectos/debs</url>
 
 	<licenses>
@@ -25,11 +27,17 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/debs.git</connection>
-		<developerConnection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/debs.git</developerConnection>
 		<url>https://github.com/objectos/debs</url>
+		<connection>scm:git:git://objectos/debs.git</connection>
+		<developerConnection>scm:git:git@github.com:objectos/debs.git
+		</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>http://github.com/objectos/debs/issues</url>
+	</issueManagement>
 
 	<developers>
 		<developer>
