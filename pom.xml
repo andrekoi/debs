@@ -10,7 +10,7 @@
 
 	<artifactId>debs</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1.0</version>
+	<version>0.1.1-SNAPSHOT</version>
 
 	<name>objectos :: debentures.com.br</name>
 	<description>Extrai e trata informações do site debenture.com.br
@@ -30,7 +30,7 @@
 		<connection>scm:git:git://objectos/debs.git</connection>
 		<developerConnection>scm:git:git@github.com:objectos/debs.git
 		</developerConnection>
-		<tag>debs-0.1.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
