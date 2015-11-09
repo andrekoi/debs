@@ -1,0 +1,27 @@
+sudo: false
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+env:
+  global:
+  - secure: "hNfwZv5G3RBJKn7z9s/y4TUr8IxFySYEF3zoR8+4q63vATrBukgLdd5cNuAXcpr5PXwyOVhECpj+In+QFEDLVoTyn5FSgcZN8WfffaRwlcv1XAEw0pkG9EFdTDFR8SkbXzWAXimXKmUmHZtu9h+zajlgHo1ePEZmE2+oMdWdk10gzrMyDTzhmXpH/jjqYYEk6X87uAD7o1YHuoduqW5CWBg3gGLVYCVeRdp1soCQSMAGGTgTegaxj6jQNky2u7rAZRA4zoPSiSux2Mqgskuufv2bylKbzcaDLQJ6Kw48Mpdl335QCWBWtjzrI589edB4+Uky2qSTtw8jFqPWFrM2IXMSVeZe20VqpVPllKikGsr65ewkVcbVze+/PoyjWiDK0gukGcTW+LaEMIIRiYtiO8SJvxfArFalzRYCJEm1IMr7k5+qcnBOvpzIcrExmmBXn9FgVmAvzR8p4jCiEdYrnW4+vOszvlLoxmtRfH6qnfMEPCIcRO+DRhCJjzBUodxW3z9v+0V0qpGWwNrWu0Ru5/n8A8bPGs+EmbN1Y7iYXVODJOyZyrOpObpkSyIlYIKQ55TMZTxq8LMjsmHJ0Fkyi69JDdbp9REtS6aAP9uKcTBpQ7Tw/pjJZgSVCtxcviJjVertrFd+6l2cvOY1wSVqjyy72+gsNTXKp/c7BRo0gGM="
+  - secure: "TQ/UkGwp7f9jfdk5jweFFnKwsbEp2u+88NHhdILT2aVl5czGwVTjG3NQ+6pvbhfAhvo9M7az72mUMcbrR9/0SpXDNxjs+wYnBlckHTdM+/v6hV0gatizbMEA67+Dil47nuimtpkPxO/GEfxaucrACxSlYlW6bTe7Y3Rhqe7CQSJFVyDs321Mbf6sJ4q8LyKoVzizmzeoSFR7h57kXYLOmboBZjFQYCY96iOzgNrDpCByiqxDmkQldsZ1YnDOZtrA4C3v5p7M7frMg5Q1xcWo81gWM1ZL8lhJfNuwxOiMXT30AGYaTo6axgTGwQAzqmS6tUcCLmUVzrxvXXzRYzUE9L25tkBXJlPsRGjos3pqtrBUhRfIHMVy0yBV93xTAE6wXzyIzdKRNrgWpEcYrhHNXZGpIM3epWtqPRFG/jeRqlw6jCcxjacx5xKNxkkG3bwH/FRUY1J7LGI5ZBqkeKNsRUEz7LjiZwHQwQAz8S6+E101Ee5aficRq13YWTQN6oGpza+RL9JN6P8cSHrzIeUuWudDPVVOmuGJ9GXzfG3zzw+EssaJq0bjyunfna6zsksA+SIBkUb7ZHfzPNTOr4Ns7RGJVh/MVzfNlK6D3OqtJZwuWCtpBH+I7v1pkWGNOGBa8IAlXibwMhXW8AH/kcjnmQ1whERDV5zl5wHIN6ejo0k="
+
+install:
+  - echo "Installing..."
+
+script:
+  - mvn clean install -U -B
+
+after_success:
+  - ".travis/deploy_snapshot.sh"
+
+cache:
+  directories:
+  - "$HOME/.m2"
+
+notifications:
+  email: false  
