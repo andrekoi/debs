@@ -14,7 +14,7 @@
 
 	<name>objectos :: debentures.com.br</name>
 	<description>Extrai e trata informações do site debenture.com.br</description>
-	<url>https://github.com/objectos/way-debs</url>
+	<url>https://github.com/objectos/debs</url>
 
 	<licenses>
 		<license>
@@ -45,7 +45,7 @@
 	</organization>
 
 	<properties>
-		<objectos.io.version>0.2.2-SNAPSHOT</objectos.io.version>
+		<objectos.io.version>0.2.2</objectos.io.version>
 	</properties>
 
 	<build>
