@@ -1,2 +1,9 @@
-target
-test-output
+code-osgi/
+code-osgi-deps/
+target/
+test-output/
+
+.classpath
+.factorypath
+.project
+.settings/
